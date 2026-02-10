@@ -1,0 +1,101 @@
+.contDescription{
+    padding-top: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+}
+.contBannerSmallImg {
+    position: relative;
+    width: 30%;
+    height: 80%;
+}
+.headDetail{
+    border: 1px solid rgb(230, 230, 230) ;
+    padding: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contTextBannerSmall{
+    height: 60%;
+    width: 40%;
+    padding: 0rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.contDetailText h1{
+    font-size: 1.5rem;
+}
+.contDetailText span{
+    font-size: 1.2rem;
+}
+.contTextBannerSmall h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.contTextBannerSmall h4{
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.contPrice{
+    padding: 2rem;
+    color: rgb(26, 82, 225);
+}
+
+@media only screen and (max-width: 64rem){
+    .contDescription{
+        flex-direction: column;
+        font-size: 1rem;
+        justify-content: flex-start;
+    }
+    .contBannerSmallImg {
+        position: relative;
+        width: 70%;
+        height: 60%;
+    }
+    .contTextBannerSmall {
+        width: 80%;
+    }
+    .contTextBannerSmall h4{
+        // margin-top: 1rem;
+        font-size: 1rem;
+        // margin-bottom: 1rem;
+    }
+}
+@media only screen and (max-width: 28rem){
+    .contDescription{
+        padding-top: 3rem;
+        font-size: .9rem;
+    }
+    .contBannerSmallImg {
+        width: 100%;
+    }
+    .contDetailText span{
+        font-size: .9rem;
+    }
+    .contTextBannerSmall{
+        width: 100%;
+        padding: 0rem 1.5rem;
+    }
+    .contTextBannerSmall h1{
+        margin-top: .5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .contTextBannerSmall h4{
+        // margin-top: 1rem;
+        font-size: .8rem;
+        // margin-bottom: 1rem;
+    }
+}

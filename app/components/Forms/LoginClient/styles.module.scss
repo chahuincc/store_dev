@@ -1,0 +1,20 @@
+.contTypeLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.widthButton {
+    width: 10rem;
+}
+.alignButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alert{
+    margin: 1rem;
+    padding: .5rem;
+    color: rgb(215, 22, 22);
+    // background: red;
+  }

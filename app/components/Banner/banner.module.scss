@@ -1,0 +1,65 @@
+.section{
+    height: 50vh;
+    width: 100%;
+}
+.contBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+}
+.contImg {
+    position: relative;
+    width: 50%;
+    height:80%;
+}
+.contText{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 35%;
+    margin: 5rem;
+}
+.contText h1 {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.contText p {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 56.25rem){
+   .section{
+    font-size: 1rem;
+    margin: 5rem 0rem
+   }
+    .contImg{
+         width: 80%;
+         height: 80%;  
+   }
+   .contText{
+     height: 45%;
+     padding-bottom: 19rem;
+     margin: 0rem 1rem;
+    }
+}
+@media only screen and (max-width: 37.5rem){
+    .section{
+        height: 30vh;
+        width: 100%;
+        font-size: .9rem;
+    }
+    .contBanner{
+        height: 40vh;
+    }
+    .contImg {
+        position: relative;
+        width: 100%;
+        height:70%;
+    }
+}

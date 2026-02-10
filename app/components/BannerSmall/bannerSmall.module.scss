@@ -1,0 +1,50 @@
+.bannerSmall{
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 20rem;
+    background: yellow;
+}
+.contBannerSmallImg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.contTextBannerSmall{
+    width: 75%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.contTextBannerSmall h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+.contTextBannerSmall h4{
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 56.25rem){
+    .bannerSmall{
+        font-size: .9rem;
+        margin: 1rem 0rem;
+        flex-direction: row-reverse;
+    }
+}
+
+@media only screen and (max-width: 37.5rem){
+.bannerSmall{
+    height: 15rem;
+    font-size: .7rem;
+}
+.contBannerSmallImg{
+    width: 70%;
+}
+}
