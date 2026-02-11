@@ -4,17 +4,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ButtonSmall from '../UI/ButtonSmall';
 import truncateWords from '@/app/tools/truncateWords';
-    
-const Banner = ({products}) => {
+
+const Banner = ({ products }) => {
+    if (!products?.data?.length) return null;
     const { category } = products.data[0]
     const { image, color, titleBanner, descriptionBanner } = products.data[0].dataBanner
-    
+
     return (
-         <div style={{background: `${color}`}} className={styles.section}>
+        <div style={{ background: `${color}` }} className={styles.section}>
             <div className={styles.contBanner}>
                 <div className={styles.contImg}>
                     {products && <Image
-                        style={{objectFit: "cover"}}
+                        style={{ objectFit: "cover" }}
                         src={image}
                         fill={true}
                         alt={`img ${category}`}
@@ -25,8 +26,8 @@ const Banner = ({products}) => {
                         <h1 className={styles.title}>{truncateWords(titleBanner, 30)}</h1>
                         <p className={styles.subtitle}>{truncateWords(descriptionBanner, 60)}</p>
                     </div>}
-                    <Link  href={`/product/${category}/all`}>
-                        <ButtonSmall text="Ver mas"/>
+                    <Link href={`/product/${category}/all`}>
+                        <ButtonSmall text="Ver mas" />
                     </Link>
                 </div>
             </div>
