@@ -13,6 +13,10 @@ const Home = async () => {
   const small1 = await getDataBanner('small-1')
   const small2 = await getDataBanner('small-2')
 
+  if (!big1 || !big2 || !small1 || !small2) {
+    return null;
+  }
+
   return (
     <div style={{ background: '#F1F1F1' }}>
       <PrincipalBanner />
