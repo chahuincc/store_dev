@@ -6,8 +6,8 @@ import { Suspense } from 'react';
 import getDataBanner from './utils/getDataBanner';
 import Loading from './components/UI/Loading';
 
-const Home = async() => {
-  
+const Home = async () => {
+
   const big1 = await getDataBanner('big-1')
   const big2 = await getDataBanner('big-2')
   const small1 = await getDataBanner('small-1')
@@ -15,13 +15,13 @@ const Home = async() => {
 
   return (
     <div style={{ background: '#F1F1F1' }}>
-        <PrincipalBanner />
-         <Suspense fallback={<Loading />}>
-            <SectionBanner products={small1} />
-            <Banner products={big1} />
-            <SectionBanner products={small2} /> 
-            <Banner products={big2} />
-          </Suspense>
+      <PrincipalBanner />
+      <Suspense fallback={<Loading />}>
+        <SectionBanner products={small1} />
+        <Banner products={big1} />
+        <SectionBanner products={small2} />
+        <Banner products={big2} />
+      </Suspense>
       <Footer />
     </div>
   );
