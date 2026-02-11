@@ -10,12 +10,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBBsYFf7RfkkBSIXlO7_oxK2sCBggp0sBA",
+  apiKey: "AIzaSyBxeKc3W39TL-hNvM4zqAcQwy7qQ7HgwBA",
   authDomain: "store-chahuin.firebaseapp.com",
   projectId: "store-chahuin",
   storageBucket: "store-chahuin.appspot.com",
   messagingSenderId: "877252614790",
-  appId: "1:877252614790:web:9d0ab5a203e08e77850f07"
+  appId: "1:877252614790:web:28a38b5005dac45c850f07"
 };
 
 // Initialize Firebase
