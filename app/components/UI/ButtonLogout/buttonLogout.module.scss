@@ -1,25 +1,28 @@
 .button {
     padding: 0;
     margin: 0;
-    color: rgb(220, 35, 35);
+    color: var(--color-text);
+    /* Use primary text color */
+    background: none;
+    border: none;
     cursor: pointer;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
+    text-align: left;
+    /* Align left for dropdown usage */
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+    transition: color 0.2s ease;
 }
 
-@media only screen and (max-width: 56.25rem){
-    .button {
-        border-radius: 0px;
-        background-color: rgba(255, 255, 255, 0);
-        font-size: 1rem;
-    }
+.button:hover {
+    color: var(--color-accent);
+    /* Highlight with accent color on hover */
+    background-color: transparent;
 }
-@media only screen and (max-width: 28rem){
+
+@media only screen and (max-width: 900px) {
     .button {
-        font-size: .8rem;
-        margin: .5rem;
-        padding: .5rem;
+        font-size: 1rem;
+        padding: 0.5rem 0;
     }
-    
 }

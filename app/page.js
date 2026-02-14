@@ -18,14 +18,28 @@ const Home = async () => {
   }
 
   return (
-    <div style={{ background: '#F1F1F1' }}>
+    <div style={{ background: 'var(--color-background)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <PrincipalBanner />
-      <Suspense fallback={<Loading />}>
-        <SectionBanner products={small1} />
-        <Banner products={big1} />
-        <SectionBanner products={small2} />
-        <Banner products={big2} />
-      </Suspense>
+
+      <main style={{
+        maxWidth: '1400px',
+        width: '100%',
+        margin: '0 auto',
+        padding: '0 20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4rem', // Consistent spacing between sections
+        marginBottom: '6rem',
+        flex: 1
+      }}>
+        <Suspense fallback={<Loading />}>
+          <SectionBanner products={small1} />
+          <Banner products={big1} />
+          <SectionBanner products={small2} />
+          <Banner products={big2} />
+        </Suspense>
+      </main>
+
       <Footer />
     </div>
   );

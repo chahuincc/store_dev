@@ -1,28 +1,50 @@
-.PrincipalBanner{
+.PrincipalBanner {
     position: relative;
-    width: auto;
-    height: 75vh;
-    padding-top: 8rem;
-    margin-bottom: 8rem;
+    width: 100%;
+    /* 
+       Height calculation:
+       If nav is sticky (overlay) or fixed, we might want full height.
+       If nav is sticky (takes space), we subtract it.
+       Assuming Nav is 80px sticky top.
+    */
+    height: calc(100vh - 80px);
+    /* Remove padding top as it's no longer needed for fixed header offset if using sticky correctly or standard flow */
+    padding-top: 0;
+    margin-bottom: 4rem;
+    /* Space below banner */
+    overflow: hidden;
 }
+
 .contBannerImg {
     max-width: 100%;
     margin: 0 auto;
     position: relative;
-    background-size: auto;
-    height: 75vh;
+    background-size: cover;
+    /* Changed from auto to cover */
+    height: calc(100vh - 80px);
     width: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
+    /* Removed brightness filter for now, add back if text overlay needs contrast */
+    /* filter: brightness(0.7); */
 }
-@media only screen and (max-width: 64rem){
-    .PrincipalBanner{
-        padding-top: 6rem;
+
+@media only screen and (max-width: 64rem) {
+    .PrincipalBanner {
+        height: 60vh;
+        margin-bottom: 2rem;
+    }
+
+    .contBannerImg {
+        height: 60vh;
     }
 }
 
-@media only screen and (max-width: 28rem){
-    .PrincipalBanner{
-        padding-top: 4rem;
+@media only screen and (max-width: 28rem) {
+    .PrincipalBanner {
+        height: 50vh;
+    }
+
+    .contBannerImg {
+        height: 50vh;
     }
 }

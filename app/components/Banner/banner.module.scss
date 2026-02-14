@@ -1,65 +1,85 @@
-.section{
-    height: 50vh;
+.section {
     width: 100%;
+    min-height: 50vh;
+    /* Ensure at least 50vh but allow growth */
+    height: auto;
+    display: flex;
+    align-items: center;
 }
+
 .contBanner {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60vh;
     width: 100%;
+    min-height: 100%;
+    /* Match section height */
+    padding: 2rem 0;
 }
+
 .contImg {
     position: relative;
     width: 50%;
-    height:80%;
-}
-.contText{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 35%;
-    margin: 5rem;
-}
-.contText h1 {
-    text-transform: capitalize;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-.contText p {
-    text-transform: capitalize;
-    margin-bottom: 1rem;
+    height: 400px;
+    /* Use px or relative unit that makes sense */
 }
 
-@media only screen and (max-width: 56.25rem){
-   .section{
+.contText {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+.contText h1 {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.contText p {
+    text-transform: capitalize;
     font-size: 1rem;
-    margin: 5rem 0rem
-   }
-    .contImg{
-         width: 80%;
-         height: 80%;  
-   }
-   .contText{
-     height: 45%;
-     padding-bottom: 19rem;
-     margin: 0rem 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 900px) {
+    .contBanner {
+        flex-direction: column;
+        padding: 4rem 0;
+    }
+
+    .contImg {
+        width: 80%;
+        height: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .contText {
+        width: 80%;
+        align-items: center;
+        text-align: center;
+        padding: 0;
     }
 }
-@media only screen and (max-width: 37.5rem){
-    .section{
-        height: 30vh;
-        width: 100%;
-        font-size: .9rem;
+
+@media only screen and (max-width: 600px) {
+    .section {
+        min-height: 40vh;
     }
-    .contBanner{
-        height: 40vh;
-    }
+
     .contImg {
-        position: relative;
-        width: 100%;
-        height:70%;
+        width: 90%;
+        height: 250px;
+    }
+
+    .contText h1 {
+        font-size: 1.5rem;
     }
 }

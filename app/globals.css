@@ -4,8 +4,24 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
+  /* Keep for legacy support if needed */
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* New Color Palette */
+  --color-primary: #0B243B;
+  /* Dark Navy */
+  --color-secondary: #248EA6;
+  /* Teal */
+  --color-tertiary: #6DC5D1;
+  /* Light Teal */
+  --color-background: #F2EFE9;
+  /* Beige/Cream */
+  --color-accent: #F29C28;
+  /* Orange */
+  --color-text: #0B243B;
+  /* Dark Navy text */
+  --color-white: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +33,8 @@
 }
 
 body {
- padding: 0;
- margin: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  padding: 0;
+  margin: 0;
 }
