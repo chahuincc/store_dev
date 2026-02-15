@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="footer">
       <div className={styles.container}>
         {/* Column 1: Brand & Social */}
         <div className={styles.column}>

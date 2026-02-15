@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Nav from './components/Nav'
+import Footer from './components/UI/Footer'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 import { PaymentProvider } from './context/PaymentContext'
@@ -16,17 +17,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <AuthProvider>
           <CartProvider>
-          <PaymentProvider>
-          <ProductDataProvider>
-            <Nav />
-            <div>
-              {children}
-            </div>
-            </ProductDataProvider>
-          </PaymentProvider>
+            <PaymentProvider>
+              <ProductDataProvider>
+                <Nav />
+                <div className="flex-grow">
+                  {children}
+                </div>
+                <Footer />
+              </ProductDataProvider>
+            </PaymentProvider>
           </CartProvider>
         </AuthProvider>
       </body>

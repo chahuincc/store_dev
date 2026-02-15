@@ -1,7 +1,6 @@
 import Banner from './components/Banner';
 import PrincipalBanner from './components/PrincipalBanner';
 import SectionBanner from './components/SectionBanner';
-import Footer from './components/UI/Footer';
 import { Suspense } from 'react';
 import getDataBanner from './utils/getDataBanner';
 import Loading from './components/UI/Loading';
@@ -18,7 +17,7 @@ const Home = async () => {
   }
 
   return (
-    <div style={{ background: 'var(--color-background)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
       <PrincipalBanner />
 
       <main style={{
@@ -39,8 +38,6 @@ const Home = async () => {
           <Banner products={big2} />
         </Suspense>
       </main>
-
-      <Footer />
     </div>
   );
 };

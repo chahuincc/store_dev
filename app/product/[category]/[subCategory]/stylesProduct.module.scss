@@ -4,69 +4,105 @@
     justify-content: flex-start;
     flex-direction: row;
     width: 100%;
+    max-width: 1400px;
+    /* Align with global max-width */
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    /* Spacing from footer */
+    min-height: 60vh;
+    /* Ensure some height before footer */
 }
-.listMenu{
-    width: 10rem;
+
+.listMenu {
+    width: 15rem;
+    /* Slightly wider for better readability */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    // padding-top: 1rem;
-    padding: 1.5rem;
-    z-index: 50;
+    justify-content: flex-start;
+    /* Align top */
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    border-right: 1px solid #eee;
+    /* Divider */
+}
+
+.listMenu ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
 }
 
 .listMenu ul li {
     text-transform: capitalize;
-    font-weight: 600;
-    color: rgb(37, 37, 37);
-    padding: .4rem 0rem;
-}
-.listMenu ul li a:hover {
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--color-text);
+    /* Use global color */
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
-  
-@media only screen and (max-width: 64rem){
+.listMenu ul li a {
+    display: block;
+    width: 100%;
+}
+
+.listMenu ul li:hover {
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* Children content container */
+.mainContent {
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1024px) {
     .contDetail {
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        position: fixed;
+        /* Removed position: fixed */
     }
-    .listMenu{
+
+    .listMenu {
         width: 100%;
-        display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        height: auto;
-        padding-top: 10.5rem;
-    }
-    .listMenu ul {
-        overflow: hidden;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 1rem;
         overflow-x: auto;
-        scrollbar-color: yellow;
-        border-left: 1px solid #979797c7;
-        border-right: 1px solid #979797c7;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+        /* Allow horizontal scroll for categories */
         justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        /* Hide scrollbar for standard browsers */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
     }
-    .listMenu ul::-webkit-scrollbar {
-        display: none;  
+
+    .listMenu::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari/Webkit */
     }
+
+    .listMenu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: auto;
+    }
+
     .listMenu ul li {
-        padding: 0rem .5rem;
+        padding: 0;
+        white-space: nowrap;
     }
-    
-}
 
-
-@media only screen and (max-width: 28rem){
-    .listMenu{
-        padding-top: 8.5rem;
+    .mainContent {
+        padding: 1rem;
     }
 }

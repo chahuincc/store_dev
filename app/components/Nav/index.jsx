@@ -17,6 +17,15 @@ function Nav() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
 
+    const scrollToFooter = (e) => {
+        e.preventDefault();
+        const footer = document.getElementById('footer');
+        if (footer) {
+            footer.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+        }
+    };
+
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
@@ -37,9 +46,9 @@ function Nav() {
                 {/* Desktop Navigation */}
                 <div className={styles.desktopNav}>
                     <Link href="/" className={styles.navLink}>Inicio</Link>
-                    <Link href="/product/all/all" className={styles.navLink}>Tienda</Link>
-                    <Link href="#" className={styles.navLink}>Nosotros</Link>
-                    <Link href="#" className={styles.navLink}>Contacto</Link>
+                    <Link href="/product/buso/all" className={styles.navLink}>Tienda</Link>
+                    <Link href="/nosotros" className={styles.navLink}>Nosotros</Link>
+                    <a href="#footer" onClick={scrollToFooter} className={styles.navLink}>Contacto</a>
                 </div>
 
                 {/* Icons Area */}
@@ -52,7 +61,7 @@ function Nav() {
                     </div>
 
                     {/* User Icon & Dropdown */}
-                    <div className={styles.userWrapper} onMouseEnter={() => setIsUserMenuOpen(true)} onMouseLeave={() => setIsUserMenuOpen(false)}>
+                    <div className={styles.userWrapper}>
                         <div className={styles.iconBtn} onClick={toggleUserMenu}>
                             {user.photoURL ? (
                                 <Image
@@ -109,7 +118,7 @@ function Nav() {
                     <Link href="/" onClick={toggleMenu}>Inicio</Link>
                     <Link href="/product/all/all" onClick={toggleMenu}>Tienda</Link>
                     <Link href="#" onClick={toggleMenu}>Nosotros</Link>
-                    <Link href="#" onClick={toggleMenu}>Contacto</Link>
+                    <a href="#footer" onClick={scrollToFooter}>Contacto</a>
                     {user.logged ? (
                         <>
                             {user.rol === 'admin' && <Link href="/admin" onClick={toggleMenu}>Panel Admin</Link>}

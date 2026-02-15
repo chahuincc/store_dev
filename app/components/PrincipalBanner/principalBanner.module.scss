@@ -7,7 +7,7 @@
        If nav is sticky (takes space), we subtract it.
        Assuming Nav is 80px sticky top.
     */
-    height: calc(100vh - 80px);
+    height: 120vh;
     /* Remove padding top as it's no longer needed for fixed header offset if using sticky correctly or standard flow */
     padding-top: 0;
     margin-bottom: 4rem;
@@ -21,7 +21,7 @@
     position: relative;
     background-size: cover;
     /* Changed from auto to cover */
-    height: calc(100vh - 80px);
+    height: 120vh;
     width: 100%;
     object-fit: cover;
     /* Removed brightness filter for now, add back if text overlay needs contrast */
@@ -30,21 +30,21 @@
 
 @media only screen and (max-width: 64rem) {
     .PrincipalBanner {
-        height: 60vh;
+        height: 70vh;
         margin-bottom: 2rem;
     }
 
     .contBannerImg {
-        height: 60vh;
+        height: 70vh;
     }
 }
 
 @media only screen and (max-width: 28rem) {
     .PrincipalBanner {
-        height: 50vh;
+        height: 60vh;
     }
 
     .contBannerImg {
-        height: 50vh;
+        height: 60vh;
     }
 }
