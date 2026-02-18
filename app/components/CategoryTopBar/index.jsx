@@ -2,7 +2,7 @@ import React from 'react'
 import getProducts from '@/app/utils/admin/getProducts'
 import CategorySlider from '../CategorySlider'
 
-async function CategoryTopBar() {
+async function CategoryTopBar({ currentCategory }) {
 
     // Fetch all products
     const products = await getProducts();
@@ -25,7 +25,7 @@ async function CategoryTopBar() {
 
     return (
         <div>
-            <CategorySlider categories={categories} />
+            <CategorySlider categories={categories} currentCategory={currentCategory} />
         </div>
     )
 }

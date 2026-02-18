@@ -7,15 +7,19 @@ import styles from './categorySlider.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function CategorySlider({ categories }) {
+function CategorySlider({ categories, currentCategory }) {
+
+    // Find the index of the current category to set as initialSlide
+    const initialSlideIndex = categories.findIndex(cat => cat.category === currentCategory);
+    const validInitialSlide = initialSlideIndex !== -1 ? initialSlideIndex : 0;
 
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        initialSlide: 0,
+        initialSlide: validInitialSlide,
         responsive: [
             {
                 breakpoint: 1024,
@@ -34,10 +38,11 @@ function CategorySlider({ categories }) {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
+
         ]
     };
 
@@ -46,7 +51,7 @@ function CategorySlider({ categories }) {
             <Slider {...settings}>
                 {categories.map((cat, index) => (
                     <div key={index} className={styles.categoryCard}>
-                        <Link href={`/product/${cat.category}/all`}>
+                        <Link href={`/product/${cat.category}/all`} scroll={false}>
                             <div className={styles.imageContainer}>
                                 <Image
                                     src={cat.image || '/placeholder.png'}

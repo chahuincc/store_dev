@@ -7,14 +7,14 @@ const SubCategoryMenu = ({ category, subCategories }) => {
         <div className={styles.subMenuContainer}>
             <ul className={styles.subMenu}>
                 <li>
-                    <Link className={styles.authLink} href={`/product/${category}/all`}>
+                    <Link className={styles.authLink} href={`/product/${category}/all`} scroll={false}>
                         Todos
                     </Link>
                 </li>
                 {subCategories?.map((item, index) => {
                     return (
                         <li key={index}>
-                            <Link className={styles.authLink} href={`/product/${category}/${item}`}>
+                            <Link className={styles.authLink} href={`/product/${category}/${item}`} scroll={false}>
                                 {item}
                             </Link>
                         </li>
